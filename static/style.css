@@ -1,0 +1,90 @@
+/* Base reset & font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card container */
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 480px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 28px;
+  color: #2d3748;
+  font-size: 1.8rem;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+input, select {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2d3748;
+  background: #f7fafc;
+  transition: border 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* Convert button */
+button {
+  margin-top: 8px;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #5a67d8;
+}
+
+/* Result display */
+.result {
+  margin-top: 24px;
+  padding: 16px;
+  background: #ebf4ff;
+  border-left: 4px solid #667eea;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #2b6cb0;
+  text-align: center;
+}

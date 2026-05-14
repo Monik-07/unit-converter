@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>⚖️ Unit Converter</h1>
+
+    <form action="/convert" method="POST">
+
+      <!-- Number Input -->
+      <label for="value">Enter Value:</label>
+      <input type="number" name="value" id="value" placeholder="e.g. 100" required />
+
+      <!-- From Unit -->
+      <label for="unit_from">From:</label>
+      <select name="unit_from" id="unit_from">
+        <optgroup label="Length">
+          <option value="km">Kilometers (km)</option>
+          <option value="miles">Miles</option>
+        </optgroup>
+        <optgroup label="Temperature">
+          <option value="celsius">Celsius (°C)</option>
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+        </optgroup>
+        <optgroup label="Weight">
+          <option value="kg">Kilograms (kg)</option>
+          <option value="lbs">Pounds (lbs)</option>
+        </optgroup>
+      </select>
+
+      <!-- To Unit -->
+      <label for="unit_to">To:</label>
+      <select name="unit_to" id="unit_to">
+        <optgroup label="Length">
+          <option value="miles">Miles</option>
+          <option value="km">Kilometers (km)</option>
+        </optgroup>
+        <optgroup label="Temperature">
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+          <option value="celsius">Celsius (°C)</option>
+        </optgroup>
+        <optgroup label="Weight">
+          <option value="lbs">Pounds (lbs)</option>
+          <option value="kg">Kilograms (kg)</option>
+        </optgroup>
+      </select>
+
+      <button type="submit">Convert</button>
+
+    </form>
+
+    <!-- Result Box: only shows after form is submitted -->
+    {% if result is not none %}
+    <div class="result">
+      {{ value }} {{ unit_from }} = <strong>{{ result }} {{ unit_to }}</strong>
+    </div>
+    {% endif %}
+
+  </div>
+
+</body>
+</html>
